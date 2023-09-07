@@ -14,10 +14,10 @@ const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 8;
-camera.rotation.x = -0.06
 scene.fog = new THREE.Fog(0x00C7FF, 20, 40);
 
 const renderer = new THREE.WebGLRenderer();
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -46,15 +46,17 @@ basewater.position.x = 0
 setInterval(spawnWater, 800)
 
 function spawnWater() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 12; i++) {
         const water = new THREE.Mesh(watergeometry, bluematerial);
+
         water.position.y = -10
         water.position.z = -48
-        water.position.x = -60 + i * 6
+        water.position.x = -50 + i * 8
         water.rotation.z = Math.floor(60 + Math.random() * 30);
         water.rotation.x = Math.floor(60 + Math.random() * 30);
         water.rotation.y = Math.floor(10 + Math.random() * 20);
         water.name = "water"
+
         scene.add(water);
     }
 }
