@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(0, 200, 255)
+}
+
+.info {
+    font-family: Arial;
+    animation: fadeIn 8s;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display: block;
+    cursor: default;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
