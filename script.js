@@ -23,8 +23,8 @@ renderer.setPixelRatio(window.devicePixelRatio * 0.5);
 document.body.appendChild(renderer.domElement);
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const watergeometry = new THREE.BoxGeometry(7, 7, 10);
-const basewatergeometry = new THREE.BoxGeometry(100, 7, 100);
+const watergeometry = new THREE.BoxGeometry(16, 10, 14);
+const basewatergeometry = new THREE.BoxGeometry(120, 7, 120);
 const winggeometry = new THREE.BoxGeometry(2.5, 0.2, 0.5);
 const greenmaterial = new THREE.MeshBasicMaterial({ color: 0x00ff30 });
 const basebluematerial = new THREE.MeshBasicMaterial({ color: 0x3030ff });
@@ -46,12 +46,12 @@ basewater.position.x = 0
 
 setInterval(spawnWater, 800)
 
-for (let i = 0; i < 12; i++) {
+for (let i = 0; i < 9; i++) {
     const water = new THREE.Mesh(watergeometry, bluematerial);
 
-    water.position.y = -10
+    water.position.y = -16
     water.position.z = -36
-    water.position.x = -50 + i * 8
+    water.position.x = -40 + i * 9
     water.rotation.z = Math.floor(60 + Math.random() * 30);
     water.rotation.x = Math.floor(60 + Math.random() * 30);
     water.rotation.y = Math.floor(10 + Math.random() * 20);
@@ -60,12 +60,12 @@ for (let i = 0; i < 12; i++) {
     scene.add(water);
 }
 
-for (let i = 0; i < 12; i++) {
+for (let i = 0; i < 9; i++) {
     const water = new THREE.Mesh(watergeometry, bluematerial);
 
-    water.position.y = -10
+    water.position.y = -16
     water.position.z = -42
-    water.position.x = -50 + i * 8
+    water.position.x = -40 + i * 9
     water.rotation.z = Math.floor(60 + Math.random() * 30);
     water.rotation.x = Math.floor(60 + Math.random() * 30);
     water.rotation.y = Math.floor(10 + Math.random() * 20);
@@ -75,12 +75,12 @@ for (let i = 0; i < 12; i++) {
 }
 
 function spawnWater() {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 9; i++) {
         const water = new THREE.Mesh(watergeometry, bluematerial);
 
-        water.position.y = -10
+        water.position.y = -16
         water.position.z = -48
-        water.position.x = -50 + i * 8
+        water.position.x = -40 + i * 9
         water.rotation.z = Math.floor(60 + Math.random() * 30);
         water.rotation.x = Math.floor(60 + Math.random() * 30);
         water.rotation.y = Math.floor(10 + Math.random() * 20);
@@ -196,7 +196,7 @@ function animate() {
 
     let objs = scene.getObjectsByProperty('material', bluematerial)
     objs.forEach(child => {
-        child.position.y = -10 + Math.sin(sin)
+        child.position.y = -16 + Math.sin(sin)
         child.position.z += 0.1
         if (child.position.z > 24) {
             scene.remove(child)
