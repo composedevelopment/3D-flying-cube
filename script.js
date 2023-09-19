@@ -46,6 +46,34 @@ basewater.position.x = 0
 
 setInterval(spawnWater, 800)
 
+for (let i = 0; i < 12; i++) {
+    const water = new THREE.Mesh(watergeometry, bluematerial);
+
+    water.position.y = -10
+    water.position.z = -36
+    water.position.x = -50 + i * 8
+    water.rotation.z = Math.floor(60 + Math.random() * 30);
+    water.rotation.x = Math.floor(60 + Math.random() * 30);
+    water.rotation.y = Math.floor(10 + Math.random() * 20);
+    water.name = "water"
+
+    scene.add(water);
+}
+
+for (let i = 0; i < 12; i++) {
+    const water = new THREE.Mesh(watergeometry, bluematerial);
+
+    water.position.y = -10
+    water.position.z = -42
+    water.position.x = -50 + i * 8
+    water.rotation.z = Math.floor(60 + Math.random() * 30);
+    water.rotation.x = Math.floor(60 + Math.random() * 30);
+    water.rotation.y = Math.floor(10 + Math.random() * 20);
+    water.name = "water"
+
+    scene.add(water);
+}
+
 function spawnWater() {
     for (let i = 0; i < 12; i++) {
         const water = new THREE.Mesh(watergeometry, bluematerial);
@@ -188,7 +216,7 @@ function animate() {
     }
 
     if (introy > 0) {
-        introy = lerp(introy, 0, 0.005)
+        introy = lerp(introy, 0, 0.01)
     }
 
     renderer.render(scene, camera);
