@@ -14,6 +14,20 @@ body {
     cursor: default;
 }
 
+.loading {
+    font-family: Arial;
+    animation: fadeIn reverse 8s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display: block;
+    cursor: default;
+}
+
 
 @keyframes fadeIn {
     0% {
