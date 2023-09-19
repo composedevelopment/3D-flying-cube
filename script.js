@@ -56,7 +56,7 @@ for (let i = 0; i < 7; i++) {
     water.rotation.x = Math.floor(60 + Math.random() * 30);
     water.rotation.y = Math.floor(10 + Math.random() * 20);
     water.name = "water"
-
+    water.randomSpeed = scale(Math.random(), 0, 1, 0.6, 1.6)
     scene.add(water);
 }
 
@@ -70,7 +70,7 @@ for (let i = 0; i < 7; i++) {
     water.rotation.x = Math.floor(60 + Math.random() * 30);
     water.rotation.y = Math.floor(10 + Math.random() * 20);
     water.name = "water"
-
+    water.randomSpeed = scale(Math.random(), 0, 1, 0.6, 1.6)
     scene.add(water);
 }
 
